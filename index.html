@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Julgamento — Luan</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px 14px 50px;
+            background: #e8e8e8;
+            color: #202020;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        .documento {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 45px 55px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 18px #00000015;
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 3px double #222;
+            padding-bottom: 22px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 30px;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .numero-caso {
+            font-size: 19px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .informacoes {
+            margin: 25px 0;
+            padding: 18px;
+            background: #f4f4f4;
+            border-left: 4px solid #333;
+        }
+
+        .informacoes p {
+            margin: 5px 0;
+        }
+
+        h2 {
+            font-size: 19px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        p {
+            text-align: justify;
+            margin: 12px 0;
+        }
+
+        .assinatura {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid #999;
+        }
+
+        .assinatura p {
+            margin: 8px 0;
+        }
+
+        .provas {
+            max-width: 850px;
+            margin: 45px auto 0;
+            padding: 35px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 18px #00000015;
+        }
+
+        .provas h2 {
+            text-align: center;
+            font-size: 42px;
+            letter-spacing: 3px;
+            margin: 0 0 20px;
+        }
+
+        .provas img {
+            display: block;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            margin: 0 auto 25px;
+            border: 1px solid #ddd;
+        }
+
+        .descricao-prova {
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* CRIME 2 */
+
+        .crime-dois {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 3px double #333;
+        }
+
+        .crime-dois h3 {
+            font-size: 25px;
+            text-align: center;
+            letter-spacing: 1px;
+            margin: 0 0 18px;
+        }
+
+        .declaracao {
+            padding: 20px;
+            background: #f4f4f4;
+            border-left: 5px solid #333;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.9;
+            overflow-wrap: anywhere;
+        }
+
+        /* PROVA 2 */
+
+        .prova-dois {
+            max-width: 850px;
+            margin: 45px auto 0;
+            padding: 35px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 18px #00000015;
+        }
+
+        .prova-dois h2 {
+            text-align: center;
+            font-size: 42px;
+            letter-spacing: 3px;
+            margin: 0 0 20px;
+        }
+
+        .prova-dois img {
+            display: block;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            margin: 0 auto 25px;
+            border: 1px solid #ddd;
+        }
+
+        .descricao-prova-dois {
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .descricao-prova-dois h3 {
+            font-size: 18px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        .descricao-prova-dois p {
+            margin: 10px 0;
+        }
+
+        /* PROVA 3 */
+
+        .prova-tres {
+            max-width: 850px;
+            margin: 45px auto 0;
+            padding: 35px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 18px #00000015;
+        }
+
+        .prova-tres h2 {
+            text-align: center;
+            font-size: 42px;
+            letter-spacing: 3px;
+            margin: 0 0 20px;
+        }
+
+        .prova-tres img {
+            display: block;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            margin: 0 auto 25px;
+            border: 1px solid #ddd;
+        }
+
+        .descricao-prova-tres {
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .descricao-prova-tres h3 {
+            font-size: 18px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        .descricao-prova-tres p {
+            margin: 10px 0;
+        }
+
+        .rodape {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px 8px 30px;
+            }
+
+            .documento {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            .numero-caso {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 17px;
+            }
+
+            .informacoes {
+                padding: 12px;
+                overflow-wrap: anywhere;
+            }
+
+            .provas {
+                padding: 22px 16px;
+                margin-top: 25px;
+            }
+
+            .provas h2 {
+                font-size: 34px;
+            }
+
+            .descricao-prova {
+                font-size: 15px;
+            }
+
+            .crime-dois h3 {
+                font-size: 21px;
+            }
+
+            .declaracao {
+                padding: 14px;
+                font-size: 16px;
+            }
+
+            .prova-dois {
+                padding: 22px 16px;
+                margin-top: 25px;
+            }
+
+            .prova-dois h2 {
+                font-size: 34px;
+            }
+
+            .descricao-prova-dois {
+                font-size: 15px;
+            }
+
+            .descricao-prova-dois h3 {
+                font-size: 17px;
+            }
+
+            .prova-tres {
+                padding: 22px 16px;
+                margin-top: 25px;
+            }
+
+            .prova-tres h2 {
+                font-size: 34px;
+            }
+
+            .descricao-prova-tres {
+                font-size: 15px;
+            }
+
+            .descricao-prova-tres h3 {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FICHA DE JULGAMENTO -->
+
+    <main class="documento">
+
+        <header class="cabecalho">
+            <h1>FICHA DE JULGAMENTO</h1>
+            <div class="numero-caso">CASO Nº 003 — LUAN</div>
+        </header>
+
+        <section class="informacoes">
+            <p><strong>ÓRGÃO JULGADOR:</strong> Conselho de Avaliação Comportamental</p>
+            <p><strong>JULGADO:</strong> Luan</p>
+            <p><strong>ASSUNTO:</strong> Excesso de silêncio e ocupação excessiva de espaço</p>
+            <p><strong>STATUS:</strong> Em análise</p>
+        </section>
+
+        <section>
+            <h2>I — Da identificação do julgado</h2>
+
+            <p>
+                Fica registrado, para fins exclusivamente humorísticos, o nome de
+                Luan como pessoa submetida à presente ficha de avaliação
+                comportamental, elaborada com o objetivo de analisar duas condutas
+                observadas em seu convívio social: o hábito de permanecer
+                excessivamente calado e a tendência de ocupar espaço além do
+                necessário.
+            </p>
+        </section>
+
+        <section>
+            <h2>II — Dos motivos da avaliação</h2>
+
+            <p>
+                O presente julgamento tem como fundamento principal o
+                comportamento atribuído ao julgado, especialmente sua notável
+                capacidade de permanecer em silêncio por períodos prolongados,
+                mesmo em situações nas quais se espera maior participação em
+                conversas, debates ou interações coletivas.
+            </p>
+
+            <p>
+                Adicionalmente, registra-se a alegação de que o julgado ocupa
+                muito espaço, circunstância que deverá ser interpretada de maneira
+                figurativa ou relacionada à organização do ambiente, conforme o
+                contexto em que a expressão foi utilizada.
+            </p>
+        </section>
+
+        <section>
+            <h2>III — Das condutas registradas</h2>
+
+            <p>
+                <strong>Art. 1º — Do silêncio excessivo.</strong>
+                Fica consignado que Luan é acusado, em tom de brincadeira, de
+                apresentar participação verbal reduzida nas interações sociais,
+                contribuindo para momentos de silêncio que, segundo os demais
+                participantes, poderiam ser preenchidos com manifestações,
+                opiniões ou comentários pertinentes.
+            </p>
+
+            <p>
+                <strong>Art. 2º — Da ocupação de espaço.</strong>
+                Registra-se, ainda, a reclamação informal de que o julgado ocupa
+                espaço em excesso, situação que motivou a inclusão desta
+                observação na presente ficha. Não havendo especificação sobre
+                a natureza do espaço mencionado, não se estabelece qualquer
+                conclusão objetiva a esse respeito.
+            </p>
+        </section>
+
+        <section class="assinatura">
+            <p><strong>HORÁRIO:</strong> Fim de tarde</p>
+            <p><strong>DATA:</strong> 25/10/2026</p>
+
+            <p>
+                <strong>Assinatura do responsável pela ficha:</strong>
+                <br>
+                ___papatrick
+            </p>
+        </section>
+
+        <footer class="rodape">
+            Documento elaborado para fins humorísticos.
+        </footer>
+
+    </main>
+
+    <!-- PROVA 1 -->
+
+    <section class="provas">
+
+        <h2>PROVA 1</h2>
+
+        <img
+            src="prova1.png"
+            alt="Imagem apresentada como Prova 1"
+        >
+
+        <p class="descricao-prova">
+            Afirmou dar a bundinha para o juiz papatrick, que o deixou
+            traumatizado e sem dormir por longos dias. Se encaixa como crime
+            de homicídio guloso do sono de juiz papatrick.
+        </p>
+
+        <!-- CRIME 2 -->
+
+        <section class="crime-dois">
+
+            <h3>CRIME 2 — DECLARAÇÃO DO ACUSADO</h3>
+
+            <p>
+                Na imagem apresentada, o cidadão acusado e julgado no Caso
+                nº 003, Luan, afirma as seguintes palavras:
+            </p>
+
+            <div class="declaracao">
+                "Rafael Rafael eu dou a bundinha
+                Rafael tá aí por favor tá aí
+                Eu preciso muito de ti cara"
+            </div>
+
+            <p>
+                <strong>OBSERVAÇÃO DO CONSELHO:</strong>
+                A declaração acima fica registrada nos autos para fins
+                exclusivamente do julgamento de
+            </p>
+
+        </section>
+
+    </section>
+
+    <!-- PROVA 2 -->
+
+    <section class="prova-dois">
+
+        <h2>PROVA 2</h2>
+
+        <img
+            src="prova2.png"
+            alt="Imagem apresentada como Prova 2"
+        >
+
+        <div class="descricao-prova-dois">
+
+            <p>
+                Na imagem apresentada, Luan apresenta o fato de pegar no ovo
+                de um dinossauro, situação que, dentro do contexto fictício
+                deste julgamento, é submetida à seguinte análise humorística:
+            </p>
+
+            <h3>Crime Contra a Fauna</h3>
+
+            <p>
+                <strong>Lei nº 9.605/1998 — Lei de Crimes Ambientais,
+                Artigo 29:</strong>
+                Matar, perseguir, caçar, apanhar ou utilizar espécimes da fauna
+                silvestre, ninhos ou ovos sem a devida autorização ou licença.
+            </p>
+
+            <h3>Posse ou Guarda Ilegal de Produto da Fauna</h3>
+
+            <p>
+                <strong>Art. 29, § 1º, inciso III:</strong>
+                Guardar, ter em cativeiro ou transportar ovos ou larvas da fauna
+                silvestre sem licença também pode configurar crime, conforme
+                as condições previstas na legislação.
+            </p>
+
+            <h3>Crimes de Maus-Tratos contra Animais</h3>
+
+            <p>
+                <strong>Lei nº 9.605/1998 — Artigo 32:</strong>
+                Define como crime praticar ato de abuso, maus-tratos, ferir ou
+                mutilar animais silvestres, domésticos ou domesticados, nativos
+                ou exóticos.
+            </p>
+
+            <h3>Observação sobre o Código Penal</h3>
+
+            <p>
+                O Artigo 216-A do Código Penal trata de assédio sexual quando
+                alguém constrange outra pessoa com o intuito de obter vantagem
+                ou favorecimento sexual, prevalecendo-se de condição de
+                superior hierárquico ou ascendência inerentes ao exercício de
+                emprego, cargo ou função. Sua aplicação depende dos elementos
+                concretos do caso.
+            </p>
+
+            <h3>Conclusão do Conselho</h3>
+
+            <p>
+                Como o objeto em questão seria um ovo de T-Rex, o Conselho
+                registra, para fins exclusivamente humorísticos, a hipótese
+                fictícia de tentativa de homicídio guloso contra o dinossauro,
+                caso ele ainda estivesse dentro do ovo.
+            </p>
+
+            <p>
+                <strong>STATUS DA PROVA:</strong> Registrada para análise
+                no julgamento fictício.
+            </p>
+
+        </div>
+
+        <footer class="rodape">
+            Prova apresentada para fins Jurídicos.
+        </footer>
+
+    </section>
+
+    <!-- PROVA 3 -->
+
+    <section class="prova-tres">
+
+        <h2>PROVA 3</h2>
+
+        <img
+            src="prova3.png"
+            alt="Imagem apresentada como Prova 3"
+        >
+
+        <div class="descricao-prova-tres">
+
+            <p>
+                Na imagem, consta a seguinte declaração atribuída a Luan:
+            </p>
+
+            <p>
+                "E tu para de mandar esses argumentos meia boca por causa que
+                tipo eu não ligo"
+            </p>
+
+            <p>
+                <strong>Luan:</strong><br>
+                "Tu pensa o que tu pensa eu não tô nem aí pode pensar o que tu
+                quiser Mas tipo não me chama para mais nada se tu começar com
+                essas baboseiras tua de criança Eu venho sempre na boa vontade
+                de jogar contigo e no final tu fica desse jeito então tchau"
+            </p>
+
+            <p>
+                Ele falou isso para o juiz papatrick, ou seja, desacato a autoridade.
+            </p>
+
+            <p>
+                A fala de Luan na imagem se encaixa nos crimes graves como:
+            </p>
+
+            <h3>Desacato a Autoridade</h3>
+
+            <p>
+                É previsto no artigo 331 do Código Penal e consiste no ato de
+                desacatar (ofender, desrespeitar ou humilhar) funcionário público
+                no exercício da função ou em razão dela.
+            </p>
+
+            <h3>Cyberbullying</h3>
+
+            <p>
+                É tipificado no artigo 146-A do Código Penal (incluído pela
+                Lei nº 14.811/2024) como o ato de intimidar sistematicamente
+                alguém, individualmente ou em grupo, mediante violência
+                psicológica ou física, no ambiente virtual.
+            </p>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+
+    <!-- PROVA 4 -->
+
+    <section class="prova-tres">
+
+        <h2>PROVA 4</h2>
+
+        <img
+            src="prova4.png"
+            alt="Imagem apresentada como Prova 4"
+        >
+
+        <div class="descricao-prova-tres">
+
+            <p>
+                Na imagem, Luan diz:
+            </p>
+
+            <p>
+                "É que um merda tá aqui e o Rafael é a putinha dele"
+            </p>
+
+            <p>
+                Rafael, neste caso, é papatrick, juiz deste caso.
+            </p>
+
+            <h3>Possíveis Enquadramentos Jurídicos</h3>
+
+            <p>
+                <strong>1. Injúria — Artigo 140 do Código Penal:</strong>
+                A utilização de expressões ofensivas dirigidas a uma pessoa
+                pode, conforme o contexto e a intenção, caracterizar injúria,
+                por atingir sua dignidade ou seu decoro.
+            </p>
+
+            <p>
+                <strong>2. Difamação — Artigo 139 do Código Penal:</strong>
+                Poderá ser considerada se houver atribuição de um fato ofensivo
+                à reputação de alguém perante terceiros. A aplicação depende
+                do conteúdo e das circunstâncias da declaração.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PROVA 5 -->
+
+    <section class="prova-tres">
+
+        <h2>PROVA 5</h2>
+
+        <img
+            src="prova5.png"
+            alt="Imagem apresentada como Prova 5"
+        >
+
+        <div class="descricao-prova-tres">
+
+            <p>
+                Na imagem apresentada, Luan ordena que o papatrick jogue com ele.
+                Não tem "?" nas mensagens, logo, ele ordena que o juiz jogue com
+                ele, que se encaixa em escravidão e outros crimes.
+            </p>
+
+            <h3>Possíveis Enquadramentos Jurídicos</h3>
+
+            <p>
+                <strong>1. Redução à condição análoga à de escravo — Artigo 149 do Código Penal:</strong>
+                Na acusação fictícia desta ficha, a mensagem é interpretada como
+                uma tentativa de obrigar o juiz a jogar. Na legislação real,
+                porém, esse crime exige condições muito mais graves, previstas
+                em lei. Uma mensagem insistente para jogar não caracteriza
+                escravidão.
+            </p>
+
+            <p>
+                <strong>2. Constrangimento ilegal — Artigo 146 do Código Penal:</strong>
+                Poderia ser analisado se alguém usasse violência ou grave ameaça
+                para obrigar outra pessoa a fazer algo que a lei não exige.
+                Apenas marcar alguém repetidamente e dizer "Vamo jogar" não
+                basta, por si só, para caracterizar esse crime.
+            </p>
+
+            <h3>Observação do Conselho</h3>
+
+            <p>
+                O Conselho registra a insistência de Luan em chamar papatrick
+                para jogar. A ausência de ponto de interrogação foi considerada
+                um agravante humorístico nesta ficha, mas transforma
+                 em uma ordem juridicamente criminosa.
+            </p>
+
+        </div>
+
+    </section>
+    
+        <!-- PROVA 6 -->
+
+    <section class="prova-tres">
+
+        <h2>PROVA 6</h2>
+
+        <img
+            src="prova6.jpg"
+            alt="Imagem apresentada como Prova 6"
+        >
+
+        <div class="descricao-prova-tres">
+
+            <p>
+                Na imagem apresentada, Luan dirige-se a Dedé, autor deste caso,
+                afirmando que ele estaria tentando descarregar a raiva em Luan
+                por ter sido abandonado pelo pai e dizendo que ele não voltaria.
+                A declaração utiliza uma questão familiar pessoal para atacar
+                emocionalmente o autor do caso, podendo ultrapassar os limites
+                de uma discussão comum.
+            </p>
+
+            <h3>Possíveis Enquadramentos Jurídicos</h3>
+
+            <p>
+                <strong>1. Injúria — Artigo 140 do Código Penal:</strong>
+                A fala pode ser analisada como possível ofensa à dignidade ou
+                ao decoro de Dedé, dependendo do contexto, da intenção e das
+                circunstâncias em que foi proferida.
+            </p>
+
+            <p>
+                <strong>2. Difamação — Artigo 139 do Código Penal:</strong>
+                Poderia ser considerada caso a declaração atribua a Dedé um fato
+                ofensivo à sua reputação perante terceiros. A simples referência
+                ao abandono paterno não configura automaticamente esse crime.
+            </p>
+
+            <p>
+                <strong>3. Indenização por danos morais — Artigos 186 e 927
+                do Código Civil:</strong>
+                Caso seja demonstrada uma violação de direitos da personalidade
+                que cause dano moral, poderá haver fundamento para uma
+                pretensão de reparação civil.
+            </p>
+
+            <h3>Observação do Conselho</h3>
+
+            <p>
+                A declaração será considerada na avaliação da conduta de Luan,
+                especialmente por envolver uma questão familiar pessoal do
+                autor do caso. A caracterização de qualquer infração dependerá
+                da análise do contexto e das provas disponíveis.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONSIDERAÇÕES FINAIS -->
+
+    <section class="prova-tres">
+
+        <h2 style="font-size: 48px; letter-spacing: 2px;">
+            CONSIDERAÇÕES FINAIS
+        </h2>
+
+        <div class="descricao-prova-tres">
+
+            <p>
+                Após a análise das seis provas apresentadas, o Conselho
+                considera necessário avaliar o conjunto das declarações,
+                mensagens e atitudes atribuídas a Luan, levando em conta
+                o contexto de cada situação e os argumentos das partes.
+            </p>
+
+            <p>
+                As provas deverão ser examinadas em conjunto, sem presumir
+                automaticamente a existência de infrações apenas com base
+                nas acusações apresentadas. A decisão deverá considerar
+                os fatos efetivamente demonstrados.
+            </p>
+
+            <p>
+                <strong>Decisão final:</strong> o veredito do julgamento será
+                definido durante a ligação do julgamento, após a avaliação
+                das provas e a manifestação das partes envolvidas.
+            </p>
+
+        </div>
+
+    </section>
